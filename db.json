@@ -1,74 +1,62 @@
 {
-    "shops": [
-        {
-            "id": 1,
-            "firstName": "Justina",
-            "lastName": "Ginglell",
-            "email": "jginglell0@networkadvertising.org",
-            "gender": "Female"
-        },
-        {
-            "id": 2,
-            "firstName": "Marion",
-            "lastName": "Jenman",
-            "email": "mjenman1@surveymonkey.com",
-            "gender": "Male"
-        },
-        {
-            "id": 3,
-            "firstName": "Alfy",
-            "lastName": "Begin",
-            "email": "abegin2@list-manage.com",
-            "gender": "Female"
-        },
-        {
-            "id": 4,
-            "firstName": "Karney",
-            "lastName": "Zanussii",
-            "email": "kzanussii3@hao123.com",
-            "gender": "Male"
-        },
-        {
-            "id": 5,
-            "firstName": "Reid",
-            "lastName": "Schapero",
-            "email": "rschapero4@timesonline.co.uk",
-            "gender": "Male"
-        },
-        {
-            "id": 6,
-            "firstName": "Dorine",
-            "lastName": "Braybrookes",
-            "email": "dbraybrookes5@gov.uk",
-            "gender": "Female"
-        },
-        {
-            "id": 7,
-            "firstName": "Sarena",
-            "lastName": "Frape",
-            "email": "sfrape6@alexa.com",
-            "gender": "Female"
-        },
-        {
-            "id": 8,
-            "firstName": "Malva",
-            "lastName": "Pierse",
-            "email": "mpierse7@usda.gov",
-            "gender": "Female"
-        },
-        {
-            "id": 9,
-            "firstName": "Rania",
-            "lastName": "Dablin",
-            "email": "rdablin8@state.gov",
-            "gender": "Female"
-        },
-        {
-            "id": 10,
-            "firstName": "Ingrim",
-            "lastName": "Offen",
-            "email": "ioffen9@slideshare.net",
-            "gender": "Male"
-        }
-    ]
+  "shops": [
+    {
+      "id": 6,
+      "shopName": "Justina",
+      "address": "Mumbai",
+      "category": "Grocery",
+      "openingDate": "9:00",
+      "closingDate": "18:00"
+    },
+    {
+      "id": 7,
+      "shopName": "Justina",
+      "address": "Mumbai",
+      "category": "Grocery",
+      "openingDate": "9:00",
+      "closingDate": "18:00"
+    },
+    {
+      "id": 8,
+      "shopName": "Justina",
+      "address": "Mumbai",
+      "category": "Grocery",
+      "openingDate": "9:00",
+      "closingDate": "18:00"
+    },
+    {
+      "id": 9,
+      "shopName": "Justina",
+      "address": "Mumbai",
+      "category": "Grocery",
+      "openingDate": "9:00",
+      "closingDate": "18:00"
+    },
+    {
+      "id": 10,
+      "shopName": "Justina",
+      "address": "Mumbai",
+      "category": "Grocery",
+      "openingDate": "9:00",
+      "closingDate": "18:00"
+    },
+    {
+      "id": "5abd1325-e87f-46ac-9fb8-b948290d903f",
+      "shopName": "Vandana",
+      "address": "Pune",
+      "category": "Butcher",
+      "openingDate": "2022-04-12T08:47:06.696Z",
+      "closingDate": "2022-04-30T08:47:10.500Z",
+      "createdAt": "2022-04-29T08:47:12.450Z"
+    },
+    {
+      "id": "bcc6e5eb-7c40-45c9-b22e-6bfd74dfc032",
+      "shopName": "test",
+      "address": "Pune",
+      "category": "Grocery",
+      "openingDate": "2022-04-25T08:51:29.678Z",
+      "closingDate": "2022-04-26T08:51:33.275Z",
+      "createdAt": "2022-04-29T08:51:36.219Z"
+    }
+  ]
 }

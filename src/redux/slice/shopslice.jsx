@@ -4,13 +4,13 @@ const initialState = {
   shops: [],
 };
 
-export const createShop = createAsyncThunk(
-  "shops/create",
-  async ({ title, description }) => {
-    const res = await shopServices.create({ title, description });
-    return res.data;
-  }
-);
+export const createShop = createAsyncThunk("shops/create", async (data) => {
+  console.log("CCCdata", data);
+  const res = await shopServices.create({
+    ...data,
+  });
+  return res.data;
+});
 export const retriveShops = createAsyncThunk("shops/retrieve", async () => {
   const res = await shopServices.getAll();
   return res.data;
@@ -22,9 +22,9 @@ export const updateShop = createAsyncThunk(
     return res.data;
   }
 );
-export const deleteShop = createAsyncThunk("shops/delete", async ({ id }) => {
+export const deleteShop = createAsyncThunk("shops/delete", async (id) => {
   await shopServices.delete(id);
-  return { id };
+  return id;
 });
 export const deleteAllShops = createAsyncThunk("shops/deleteAll", async () => {
   const res = await shopServices.deleteAll();
@@ -57,8 +57,8 @@ const shopSlice = createSlice({
       };
     },
     [deleteShop.fulfilled]: (state, action) => {
-      let index = state.findIndex(({ id }) => id === action.payload.id);
-      state.splice(index, 1);
+      let index = state.shops.findIndex((id) => id === action.payload.id);
+      state.shops.splice(index, 1);
     },
     [deleteAllShops.fulfilled]: (state, action) => {
       return [];

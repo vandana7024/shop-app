@@ -1,15 +1,46 @@
-import React, { useState } from "react";
-import { Button, Form, Input, TimePicker, Select, Typography } from "antd";
+import React from "react";
+import {
+  Button,
+  Form,
+  Input,
+  TimePicker,
+  Select,
+  Typography,
+  DatePicker,
+  message,
+} from "antd";
 import moment from "moment";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { createShop } from "../redux/slice/shopslice";
+import { useNavigate } from "react-router-dom";
 
 function CreateShop() {
+  const [form] = Form.useForm();
+  const dispatch = useDispatch();
   const { Title } = Typography;
-  const [shopAddress, setShopAddress] = useState("");
-  const [shopCategory, setShopCategory] = useState("");
+  const navigate = useNavigate();
 
-  function onOpeningTime(time, timeString) {
-    console.log("time", time, timeString);
-  }
+  const onSubmit = (data) => {
+    const { _d: _openingDate } = data.openingDate;
+    const { _d: _closingDate } = data.closingDate;
+    const newShop = {
+      id: uuidv4(),
+      shopName: data.shopName,
+      address: data.address,
+      category: data.category,
+      openingDate: _openingDate,
+      closingDate: _closingDate,
+      createdAt: new Date(),
+    };
+    console.log(newShop);
+    dispatch(createShop(newShop));
+    message.success("Shop created successfully");
+    setTimeout(() => {
+      navigate("/");
+    }, 300);
+  };
+
   return (
     <div>
       <center>
@@ -29,7 +60,7 @@ function CreateShop() {
             <hr className="border border-gray-50 shadow-lg  w-full" />
 
             <div>
-              <Form layout="vertical">
+              <Form layout="vertical" onFinish={onSubmit} form={form}>
                 <div className="flex flex-col sm:flex-row justify-evenly sm:mt-5 flex-wrap">
                   <Form.Item
                     rules={[
@@ -37,26 +68,9 @@ function CreateShop() {
                     ]}
                     className="flex-1"
                     label="Name"
-                    name="name"
+                    name="shopName"
                   >
                     <Input placeholder="Enter User Name" />
-                  </Form.Item>
-
-                  <Form.Item
-                    // write a rule  for mobile number validation
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please insert your mobile number",
-                      },
-                    ]}
-                    label="Mobile Number"
-                    name="mobile"
-                    style={{ margin: "0px" }}
-                    // style={{ maxWidth: "450px" }}
-                    className=" flex-1"
-                  >
-                    <Input placeholder="Enter User Mobile Number" />
                   </Form.Item>
                 </div>
 
@@ -71,7 +85,7 @@ function CreateShop() {
                     ]}
                     className="flex-1 "
                     style={{ maxWidth: "341px", margin: "0px" }}
-                    name="shopCategory"
+                    name="category"
                   >
                     <Select
                       className="flex-1"
@@ -80,8 +94,6 @@ function CreateShop() {
                         borderRadius: "5px",
                         padding: "3px",
                       }}
-                      name="shopCategory"
-                      onChange={(value) => setShopCategory(value)}
                     >
                       <Select.Option value="Grocery">Grocery</Select.Option>
                       <Select.Option value="Butcher">Butcher</Select.Option>
@@ -103,8 +115,7 @@ function CreateShop() {
                     ]}
                     className="flex-1 "
                     style={{ maxWidth: "341px", margin: "0px" }}
-                    name="shopAddress"
-                    onChange={(value) => setShopAddress(value)}
+                    name="address"
                   >
                     <Select
                       className="flex-1"
@@ -113,7 +124,6 @@ function CreateShop() {
                         borderRadius: "5px",
                         padding: "3px",
                       }}
-                      on
                     >
                       <Select.Option value="Thane">Thane</Select.Option>
                       <Select.Option value="Pune">Pune</Select.Option>
@@ -132,7 +142,7 @@ function CreateShop() {
 
                 <div className="flex flex-col sm:flex-row justify-around flex-wrap">
                   <Form.Item
-                    name="year"
+                    name="openingDate"
                     label="Opening Time"
                     rules={[{ required: true }]}
                     style={{
@@ -140,13 +150,10 @@ function CreateShop() {
                       width: "calc(50% - 8px)",
                     }}
                   >
-                    <TimePicker
-                      onChange={onOpeningTime}
-                      defaultOpenValue={moment("00:00:00", "HH:mm:ss")}
-                    />
+                    <DatePicker />
                   </Form.Item>
                   <Form.Item
-                    name="month"
+                    name="closingDate"
                     label="Closing Time"
                     rules={[{ required: true }]}
                     style={{
@@ -155,9 +162,7 @@ function CreateShop() {
                       margin: "0 8px",
                     }}
                   >
-                    <TimePicker
-                      defaultOpenValue={moment("00:00:00", "HH:mm:ss")}
-                    />
+                    <DatePicker />
                   </Form.Item>
                 </div>
                 <div>
@@ -166,13 +171,16 @@ function CreateShop() {
                     style={{ margin: "32px" }}
                   >
                     <Button
+                      onClick={() => {
+                        form.resetFields();
+                        navigate("/");
+                      }}
                       size="large"
-                      htmlType="submit  "
                       className="text-primary mr-2"
                     >
                       Cancel
                     </Button>
-                    <Button type="primary" size="large" htmlType="submit ">
+                    <Button type="primary" size="large" htmlType="submit">
                       Create Now
                     </Button>
                   </Form.Item>
