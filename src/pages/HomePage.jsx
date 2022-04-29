@@ -1,14 +1,15 @@
 import React from "react";
-// import Navbar from "../components/Navbar";
-// import { PlusOutlined } from "@ant-design/icons";
-// import { Button } from "antd";
-// import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { PlusOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { retriveShops } from "../redux/slice/shopslice";
 
 function HomePage() {
   const shops = useSelector((state) => state.shop.shops, shallowEqual);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     dispatch(retriveShops());
@@ -16,9 +17,7 @@ function HomePage() {
 
   return (
     <div className="">
-      {/* <Navbar />
-
-     
+      <Navbar />
 
       <div className="absolute bottom-10 right-8">
         <Button
@@ -29,7 +28,7 @@ function HomePage() {
           onClick={() => navigate("/create-shop")}
         ></Button>
         ;
-      </div> */}
+      </div>
 
       {shops?.map((user) => (
         <div key={user.id}>
