@@ -44,14 +44,14 @@ function CreateShop() {
   return (
     <div>
       <center>
-        <div className=" w-full h-screen bg- bg-gray-200 flex justify-center items-center rounded-xl shadow-2xl shadow-blue-400">
-          <div className="w-full sm:max-w-2xl bg-white p-5 ">
+        <div className=" w-full h-screen  bg-gray-200 flex justify-center items-center rounded-xl shadow-2xl shadow-blue-400">
+          <div className="w-full md:max-w-2xl bg-white p-5 ">
             <div className="flex justify-start items-start ">
               <Title
                 level={3}
                 style={{
                   marginTop: "25px",
-                  color: "#582949",
+                  color: "blue",
                 }}
               >
                 Create Shop
@@ -61,20 +61,20 @@ function CreateShop() {
 
             <div>
               <Form layout="vertical" onFinish={onSubmit} form={form}>
-                <div className="flex flex-col sm:flex-row justify-evenly sm:mt-5 flex-wrap">
+                <div className="w-full">
                   <Form.Item
                     rules={[
                       { required: true, message: "Please insert your name" },
                     ]}
-                    className="flex-1"
+                    className="flex-1 md:m-2"
                     label="Name"
                     name="shopName"
                   >
-                    <Input placeholder="Enter User Name" />
+                    <Input placeholder="Enter Shop Name" />
                   </Form.Item>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-around flex-wrap">
+                <div className="flex flex-col md:flex-row justify-between items-center ">
                   <Form.Item
                     label=" Shop Category!"
                     rules={[
@@ -83,18 +83,10 @@ function CreateShop() {
                         message: "Please Select Shop Category!",
                       },
                     ]}
-                    className="flex-1 "
-                    style={{ maxWidth: "341px", margin: "0px" }}
+                    className="w-full md:w-1/2 md:m-2"
                     name="category"
                   >
-                    <Select
-                      className="flex-1"
-                      style={{
-                        border: "1px solid #d9d9d9",
-                        borderRadius: "5px",
-                        padding: "3px",
-                      }}
-                    >
+                    <Select>
                       <Select.Option value="Grocery">Grocery</Select.Option>
                       <Select.Option value="Butcher">Butcher</Select.Option>
                       <Select.Option value="Baker">Baker</Select.Option>
@@ -113,18 +105,10 @@ function CreateShop() {
                         message: "Please Select Shop Address!",
                       },
                     ]}
-                    className="flex-1 "
-                    style={{ maxWidth: "341px", margin: "0px" }}
+                    className="w-full md:w-1/2 md:m-2"
                     name="address"
                   >
-                    <Select
-                      className="flex-1"
-                      style={{
-                        border: "1px solid #d9d9d9",
-                        borderRadius: "5px",
-                        padding: "3px",
-                      }}
-                    >
+                    <Select>
                       <Select.Option value="Thane">Thane</Select.Option>
                       <Select.Option value="Pune">Pune</Select.Option>
                       <Select.Option value="Mumbai Suburban">
@@ -140,29 +124,22 @@ function CreateShop() {
                   </Form.Item>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-around flex-wrap">
+                <div className="flex flex-col md:flex-row md:justify-between w-full">
                   <Form.Item
                     name="openingDate"
                     label="Opening Time"
                     rules={[{ required: true }]}
-                    style={{
-                      display: "inline-block",
-                      width: "calc(50% - 8px)",
-                    }}
+                    className="w-full flex-1 md:m-2"
                   >
-                    <DatePicker />
+                    <DatePicker style={{ width: "100%" }} />
                   </Form.Item>
                   <Form.Item
                     name="closingDate"
                     label="Closing Time"
                     rules={[{ required: true }]}
-                    style={{
-                      display: "inline-block",
-                      width: "calc(50% - 8px)",
-                      margin: "0 8px",
-                    }}
+                    className="w-full flex-1 md:m-2"
                   >
-                    <DatePicker />
+                    <DatePicker style={{ width: "100%" }} />
                   </Form.Item>
                 </div>
                 <div>
@@ -184,7 +161,12 @@ function CreateShop() {
                       type="primary"
                       size="large"
                       htmlType="submit"
-                      style={{ backgroundColor: "blue" }}
+                      style={{
+                        backgroundColor: "blue",
+                        color: "white",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
                     >
                       Create Now
                     </Button>

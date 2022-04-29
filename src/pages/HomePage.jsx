@@ -79,12 +79,12 @@ function HomePage() {
   return (
     <div className="">
       <Navbar />
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center m-5">
         <Input
-          placeholder="Search"
+          placeholder="Search by Category , Address"
           onChange={handleSearch}
           type="search"
-          style={{ width: 200 }}
+          style={{ width: 300 }}
         />
       </div>
       <Table columns={columns} dataSource={filterData} />;

@@ -5,15 +5,18 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
   return (
-    <div className="w-full h-16  flex  items-center bg-blue-300">
+    <div className="w-full h-16  flex  items-center bg-white shadow-xl ">
       <div className=" w-full flex justify-around">
         <div>
-          <h1 className="italic text-2xl font-medium text-red-400">MyShop</h1>
+          <h1 className="italic text-3xl font-semibold text-blue-500">
+            MyShop
+          </h1>
         </div>
         <div>
           <Button
             type="primary"
             size="large"
+            style={{ backgroundColor: "blue" }}
             onClick={() => navigate("/create")}
           >
             Create Shop

@@ -2,30 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 @import '~antd/dist/antd.css';
-
-.my-input {
-  background-color: transparent;
-  border: 1px solid #c09f6b;
-  border-radius: 6px;
-  color: "#C09F6B";
-}
-/* .ant-input {
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #c09f6b;
-  border-radius: 6px;
-  color: "#C09F6B";
-  border: 2px solid #d7d7dc important;
-  margin: 1px;
-} */
-.ant-input{
-  height:40px;
-  border: 2px solid gray important;
-  background-color: transparent;
-  margin: 1px;
-}
-.ant-picker {
-  border: 2px solid gray important;
-  background-color: transparent;
-  margin: 10px;
-}

@@ -7,7 +7,7 @@
       "category": "Butcher",
       "openingDate": "2022-04-01T11:32:18.897Z",
       "closingDate": "2022-04-30T11:32:21.508Z",
-      "updatedAt": "2022-04-29T13:44:10.894Z"
+      "updatedAt": "2022-04-29T14:01:37.523Z"
     },
     {
       "id": "b73940fa-6a63-4ed7-9357-901839997825",
@@ -35,6 +35,15 @@
       "openingDate": "2022-04-07T11:56:14.131Z",
       "closingDate": "2022-04-28T11:56:11.938Z",
       "createdAt": "2022-04-29T11:56:18.321Z"
+    },
+    {
+      "id": "07858ac0-5f91-43bc-92bc-53f0eb58ff82",
+      "shopName": "Vandana",
+      "address": "Nashikr",
+      "category": "Grocery",
+      "openingDate": "2022-04-27T14:03:52.962Z",
+      "closingDate": "2022-04-30T14:03:56.249Z",
+      "createdAt": "2022-04-29T14:04:07.297Z"
     }
   ]
 }
