@@ -12,7 +12,6 @@ import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { createShop } from "../redux/slice/shopslice";
 import { useNavigate } from "react-router-dom";
-import moment from "moment";
 
 function CreateShop() {
   const [form] = Form.useForm();

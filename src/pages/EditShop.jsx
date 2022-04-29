@@ -1,25 +1,17 @@
 import React from "react";
-import {
-  Button,
-  Form,
-  Input,
-  Select,
-  Typography,
-  DatePicker,
-  message,
-  Modal,
-} from "antd";
+import { Button, Form, Input, Select, DatePicker, message, Modal } from "antd";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
+
 import moment from "moment";
+import { EditOutlined } from "@ant-design/icons";
 import { updateShop } from "../redux/slice/shopslice";
 
 const EditShop = ({ shop, modalVisible }) => {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
   const [form] = Form.useForm();
   const dispatch = useDispatch();
-  const { Title } = Typography;
+
   const navigate = useNavigate();
   const [openingDate, setOpeningDate] = React.useState(
     moment(shop.openingDate)
@@ -51,9 +43,10 @@ const EditShop = ({ shop, modalVisible }) => {
 
     dispatch(updateShop(editedShop));
     message.success("Shop Edited successfully");
+    handleCancel();
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    }, 300);
   };
   const handleOk = () => {
     setIsModalVisible(false);
@@ -70,7 +63,7 @@ const EditShop = ({ shop, modalVisible }) => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Edit
+        <EditOutlined style={{ fontSize: "20px", color: "blue" }} />
       </Button>
       <Modal
         title="Update Shop"
@@ -78,6 +71,7 @@ const EditShop = ({ shop, modalVisible }) => {
         footer={null}
         className="h-full w-full"
         onCancel={handleCancel}
+        handleOk={handleOk}
       >
         <Form
           layout="vertical"
@@ -142,7 +136,7 @@ const EditShop = ({ shop, modalVisible }) => {
             </Form.Item>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between w-full">
-            <div className="w-full flex-1 md:m-2">
+            <div className="w-full flex-1 md:m-2 ">
               <label htmlFor="">Opening Date</label>
               <DatePicker
                 label="Opening Date"
@@ -152,7 +146,7 @@ const EditShop = ({ shop, modalVisible }) => {
                 style={{ width: "100%" }}
               />
             </div>
-            <div className="w-full flex-1 md:m-2">
+            <div className="w-full flex-1 md:m-2 mt-5">
               <label htmlFor="">Closing Date</label>
               <DatePicker
                 label="Closing Date"
@@ -185,6 +179,12 @@ const EditShop = ({ shop, modalVisible }) => {
                 size="large"
                 htmlType="submit"
                 className="mx-2"
+                style={{
+                  backgroundColor: "blue",
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                }}
               >
                 Edit
               </Button>

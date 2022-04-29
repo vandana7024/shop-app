@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Navbar from "../components/Navbar";
-import { PlusOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Table } from "antd";
-import { useNavigate } from "react-router-dom";
+import { DeleteOutlined } from "@ant-design/icons";
+import { Button, Input, Space, Table, DatePicker } from "antd";
+
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { deleteShop, retriveShops } from "../redux/slice/shopslice";
 import EditShop from "./EditShop";
@@ -56,7 +56,7 @@ function HomePage() {
         <Space size="middle">
           <EditShop shop={record} />
           <Button onClick={() => dispatch(deleteShop(record.id))}>
-            Delete
+            <DeleteOutlined style={{ fontSize: "20px", color: "red" }} />
           </Button>
         </Space>
       ),
@@ -64,30 +64,59 @@ function HomePage() {
   ];
 
   const handleSearch = (e) => {
-    if (searchText) {
-      const searchData = shopData.filter((item) =>
-        item.shopName.toLowerCase().includes(searchText.toLowerCase())
+    if (e.target.value.length > 0) {
+      const filterData = shopData.filter(
+        (shop) =>
+          shop.category.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          shop.address.toLowerCase().includes(e.target.value.toLowerCase())
       );
-      setFilterData(searchData);
+      setFilterData(filterData);
     } else {
       setFilterData(shopData);
     }
   };
 
+  // const handleSearch = (e) => {
+  //   if (searchText) {
+  //     const searchData = shopData.filter((item) =>
+  //       item.shopName.toLowerCase().includes(searchText.toLowerCase())
+  //     );
+  //     setFilterData(searchData);
+  //   } else {
+  //     setFilterData(shopData);
+  //   }
+  // };
+  const hadleSearchDate = (e) => {
+    const searchData = shopData.filter(
+      (item) =>
+        moment(item.openingDate).isSame(e, "day") ||
+        moment(item.closingDate).isSame(e, "day")
+    );
+    setFilterData(searchData);
+    console.log("jd", searchData);
+  };
+
   console.log("filter", filterData);
 
   return (
-    <div className="">
+    <div className="object-contain flex flex-col justify-center items-center ">
       <Navbar />
-      <div className="flex justify-center items-center m-5">
+      <div className="flex justify-center items-center my-10 w-full ">
         <Input
-          placeholder="Search by Category , Address"
           onChange={handleSearch}
-          type="search"
-          style={{ width: 300 }}
+          placeholder="Search by Category and Area"
+          style={{ width: "40%" }}
         />
+        <DatePicker onChange={hadleSearchDate} placeholder="Search by date" />
       </div>
-      <Table columns={columns} dataSource={filterData} />;
+      <Table
+        className="m-6"
+        columns={columns}
+        dataSource={filterData}
+        scroll={{ x: 700, y: 800 }}
+        rowKey="id"
+      />
+      ;
     </div>
   );
 }
