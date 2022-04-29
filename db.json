@@ -1,62 +1,40 @@
 {
   "shops": [
     {
-      "id": 6,
-      "shopName": "Justina",
-      "address": "Mumbai",
-      "category": "Grocery",
-      "openingDate": "9:00",
-      "closingDate": "18:00"
-    },
-    {
-      "id": 7,
-      "shopName": "Justina",
-      "address": "Mumbai",
-      "category": "Grocery",
-      "openingDate": "9:00",
-      "closingDate": "18:00"
-    },
-    {
-      "id": 8,
-      "shopName": "Justina",
-      "address": "Mumbai",
-      "category": "Grocery",
-      "openingDate": "9:00",
-      "closingDate": "18:00"
-    },
-    {
-      "id": 9,
-      "shopName": "Justina",
-      "address": "Mumbai",
-      "category": "Grocery",
-      "openingDate": "9:00",
-      "closingDate": "18:00"
-    },
-    {
-      "id": 10,
-      "shopName": "Justina",
-      "address": "Mumbai",
-      "category": "Grocery",
-      "openingDate": "9:00",
-      "closingDate": "18:00"
-    },
-    {
-      "id": "5abd1325-e87f-46ac-9fb8-b948290d903f",
-      "shopName": "Vandana",
-      "address": "Pune",
+      "id": "03d1d48a-358a-4446-97ef-222820649a6e",
+      "shopName": "nnnn",
+      "address": "Thane",
       "category": "Butcher",
-      "openingDate": "2022-04-12T08:47:06.696Z",
-      "closingDate": "2022-04-30T08:47:10.500Z",
-      "createdAt": "2022-04-29T08:47:12.450Z"
+      "openingDate": "2022-04-01T11:32:18.897Z",
+      "closingDate": "2022-04-30T11:32:21.508Z",
+      "updatedAt": "2022-04-29T13:44:10.894Z"
     },
     {
-      "id": "bcc6e5eb-7c40-45c9-b22e-6bfd74dfc032",
+      "id": "b73940fa-6a63-4ed7-9357-901839997825",
+      "shopName": "dfa",
+      "address": "Mumbai Suburban",
+      "category": "Baker",
+      "openingDate": "2022-04-20T11:55:43.738Z",
+      "closingDate": "2022-04-29T11:55:46.586Z",
+      "createdAt": "2022-04-29T11:55:48.379Z"
+    },
+    {
+      "id": "f6670150-279f-4153-8a79-317831bae90e",
       "shopName": "test",
-      "address": "Pune",
-      "category": "Grocery",
-      "openingDate": "2022-04-25T08:51:29.678Z",
-      "closingDate": "2022-04-26T08:51:33.275Z",
-      "createdAt": "2022-04-29T08:51:36.219Z"
+      "address": "Nagpur",
+      "category": "Baker",
+      "openingDate": "2022-04-27T11:55:59.651Z",
+      "closingDate": "2022-04-28T11:56:01.620Z",
+      "createdAt": "2022-04-29T11:56:03.498Z"
+    },
+    {
+      "id": "998c14d4-7993-48b4-8875-c1a7fa2fb98f",
+      "shopName": "test",
+      "address": "Nagpur",
+      "category": "Butcher",
+      "openingDate": "2022-04-07T11:56:14.131Z",
+      "closingDate": "2022-04-28T11:56:11.938Z",
+      "createdAt": "2022-04-29T11:56:18.321Z"
     }
   ]
 }

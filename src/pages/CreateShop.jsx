@@ -3,17 +3,16 @@ import {
   Button,
   Form,
   Input,
-  TimePicker,
   Select,
   Typography,
   DatePicker,
   message,
 } from "antd";
-import moment from "moment";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { createShop } from "../redux/slice/shopslice";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 function CreateShop() {
   const [form] = Form.useForm();
@@ -24,6 +23,7 @@ function CreateShop() {
   const onSubmit = (data) => {
     const { _d: _openingDate } = data.openingDate;
     const { _d: _closingDate } = data.closingDate;
+
     const newShop = {
       id: uuidv4(),
       shopName: data.shopName,
@@ -33,19 +33,19 @@ function CreateShop() {
       closingDate: _closingDate,
       createdAt: new Date(),
     };
-    console.log(newShop);
+
     dispatch(createShop(newShop));
     message.success("Shop created successfully");
     setTimeout(() => {
       navigate("/");
-    }, 300);
+    }, 1000);
   };
 
   return (
     <div>
       <center>
-        <div className="pb-4 pt-3 bg-white  shadow-gray max-w-4xl sm:m-9 h-screen shadow-2xl rounded-lg p-3 sm:px-28 ">
-          <div className=" ">
+        <div className=" w-full h-screen bg- bg-gray-200 flex justify-center items-center rounded-xl shadow-2xl shadow-blue-400">
+          <div className="w-full sm:max-w-2xl bg-white p-5 ">
             <div className="flex justify-start items-start ">
               <Title
                 level={3}
@@ -180,7 +180,12 @@ function CreateShop() {
                     >
                       Cancel
                     </Button>
-                    <Button type="primary" size="large" htmlType="submit">
+                    <Button
+                      type="primary"
+                      size="large"
+                      htmlType="submit"
+                      style={{ backgroundColor: "blue" }}
+                    >
                       Create Now
                     </Button>
                   </Form.Item>

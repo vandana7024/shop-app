@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Navbar from "../components/Navbar";
 import { PlusOutlined } from "@ant-design/icons";
@@ -5,23 +6,25 @@ import { Button, Input, Space, Table } from "antd";
 import { useNavigate } from "react-router-dom";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { deleteShop, retriveShops } from "../redux/slice/shopslice";
-import ShopTable from "../components/ShopTable";
+import EditShop from "./EditShop";
+import moment from "moment";
 
 function HomePage() {
-  const { Search } = Input;
-  const shopData = useSelector((state) => state.shop.shops, shallowEqual);
-  console.log("shops", shopData);
   const dispatch = useDispatch();
+  const shopData = useSelector((state) => state.shop.shops, shallowEqual);
+  const [filterData, setFilterData] = React.useState([...shopData]);
+  const [searchText, setSearchText] = React.useState("");
 
   React.useEffect(() => {
     dispatch(retriveShops());
-  }, []);
+  }, [dispatch, searchText]);
+
   const columns = [
     {
       title: "Shop Name",
       dataIndex: "shopName",
       key: "shopName",
-      render: (text) => <a>{text}</a>,
+      render: (text) => <span>{text}</span>,
     },
     {
       title: "Category",
@@ -37,11 +40,13 @@ function HomePage() {
       title: "Open Date",
       dataIndex: "openingDate",
       key: "openingDate",
+      render: (text) => <span>{moment(text).format("DD/MM/YYYY")}</span>,
     },
     {
       title: "Close Date",
       dataIndex: "closingDate",
       key: "closingDate",
+      render: (text) => <span>{moment(text).format("DD/MM/YYYY")}</span>,
     },
 
     {
@@ -49,7 +54,7 @@ function HomePage() {
       key: "action",
       render: (text, record) => (
         <Space size="middle">
-          <Button>Edit</Button>
+          <EditShop shop={record} />
           <Button onClick={() => dispatch(deleteShop(record.id))}>
             Delete
           </Button>
@@ -58,14 +63,31 @@ function HomePage() {
     },
   ];
 
+  const handleSearch = (e) => {
+    if (searchText) {
+      const searchData = shopData.filter((item) =>
+        item.shopName.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setFilterData(searchData);
+    } else {
+      setFilterData(shopData);
+    }
+  };
+
+  console.log("filter", filterData);
+
   return (
     <div className="">
       <Navbar />
       <div className="flex justify-center items-center">
-        <Search placeholder="input search text" style={{ width: 200 }} />
+        <Input
+          placeholder="Search"
+          onChange={handleSearch}
+          type="search"
+          style={{ width: 200 }}
+        />
       </div>
-      {/* <ShopTable /> */}
-      <Table columns={columns} dataSource={shopData} />;
+      <Table columns={columns} dataSource={filterData} />;
     </div>
   );
 }

@@ -18,3 +18,14 @@
   border: 2px solid #d7d7dc important;
   margin: 1px;
 } */
+.ant-input{
+  height:40px;
+  border: 2px solid gray important;
+  background-color: transparent;
+  margin: 1px;
+}
+.ant-picker {
+  border: 2px solid gray important;
+  background-color: transparent;
+  margin: 10px;
+}

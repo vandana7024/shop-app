@@ -9,7 +9,8 @@ class shopDataServices {
   create(data) {
     return http.post("/shops", data);
   }
-  update(id, data) {
+  update(data) {
+    const { id } = data;
     return http.put(`/shops/${id}`, data);
   }
   delete(id) {
@@ -18,8 +19,8 @@ class shopDataServices {
   deleteAll() {
     return http.delete(`/shops`);
   }
-  //   findByTitle(title) {
-  //     return http.get(`/shops?title=${title}`);
-  //   }
+  findByTitle(title) {
+    return http.get(`/shops?title=${title}`);
+  }
 }
 export default new shopDataServices();
