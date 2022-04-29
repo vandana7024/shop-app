@@ -1,33 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
+
 import axios from "axios";
 import { API } from "./constant";
+import HomePage from "./pages/HomePage";
+import CreateShop from "./pages/CreateShop";
 
 function App() {
-  const [users, setUsers] = React.useState([]);
-
-  React.useEffect(() => {
-    axios.get(`${API}/data`).then((res) => {
-      setUsers(res.data);
-    });
-  }, []);
-
   return (
-    <div className="App">
-      ALL USERS
-      <div>
-        {users?.map((user) => {
-          return (
-            <div key={user.id}>
-              <div>
-                {user.id}:{user.name}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/create" element={<CreateShop />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

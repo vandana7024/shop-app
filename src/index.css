@@ -1,13 +1,20 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~antd/dist/antd.css';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.my-input {
+  background-color: transparent;
+  border: 1px solid #c09f6b;
+  border-radius: 6px;
+  color: "#C09F6B";
+}
+.ant-input {
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #c09f6b;
+  border-radius: 6px;
+  color: "#C09F6B";
+  border: 2px solid #d7d7dc important;
+  margin: 1px;
 }
