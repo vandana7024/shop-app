@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Form,
-  Select,
-  DatePicker,
-  message,
-  Modal,
-  InputNumber,
-} from "antd";
+import { Button, Form, Select, DatePicker, message, Modal, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -99,9 +91,9 @@ const EditShop = ({ shop, modalVisible }) => {
               name="shopName"
               rules={[
                 {
-                  pattern: /^[a-zA-Z ]+$/,
+                  pattern: /^[a-z A-Z ]+$/,
 
-                  message: "Please insert your shop name",
+                  message: "Shop name should not contain numbers",
                 },
                 {
                   required: true,
@@ -109,7 +101,7 @@ const EditShop = ({ shop, modalVisible }) => {
                 },
               ]}
             >
-              <InputNumber placeholder="Enter Shop Name" allowClear />
+              <Input placeholder="Enter Shop Name" maxLength={40} />
             </Form.Item>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center">

@@ -3,7 +3,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-
 import HomePage from "./pages/HomePage";
 import CreateShop from "./pages/CreateShop";
 

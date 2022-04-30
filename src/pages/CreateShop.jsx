@@ -37,7 +37,7 @@ function CreateShop() {
     message.success("Shop created successfully");
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    }, 300);
   };
 
   return (
@@ -63,6 +63,10 @@ function CreateShop() {
                 <div className="w-full">
                   <Form.Item
                     rules={[
+                      {
+                        pattern: /^[a-z A-Z ]+$/,
+                        message: "Shop name should not contain numbers",
+                      },
                       {
                         required: true,
                         message: "Please insert your shop name",

@@ -1,33 +1,6 @@
 {
   "shops": [
     {
-      "id": "03d1d48a-358a-4446-97ef-222820649a6e",
-      "shopName": "nnnnhjjj",
-      "address": "Thane",
-      "category": "Butcher",
-      "openingDate": "2022-04-01T11:32:18.897Z",
-      "closingDate": "2022-04-30T11:32:21.508Z",
-      "updatedAt": "2022-04-30T06:36:10.700Z"
-    },
-    {
-      "id": "b73940fa-6a63-4ed7-9357-901839997825",
-      "shopName": "dfa",
-      "address": "Mumbai Suburban",
-      "category": "Baker",
-      "openingDate": "2022-04-20T11:55:43.738Z",
-      "closingDate": "2022-04-30T06:21:06.958Z",
-      "updatedAt": "2022-04-30T06:21:08.663Z"
-    },
-    {
-      "id": "f6670150-279f-4153-8a79-317831bae90e",
-      "shopName": "test",
-      "address": "Nagpur",
-      "category": "Baker",
-      "openingDate": "2022-04-27T11:55:59.651Z",
-      "closingDate": "2022-04-28T11:56:01.620Z",
-      "createdAt": "2022-04-29T11:56:03.498Z"
-    },
-    {
       "id": "998c14d4-7993-48b4-8875-c1a7fa2fb98f",
       "shopName": "test",
       "address": "Nagpur",
@@ -37,13 +10,67 @@
       "createdAt": "2022-04-29T11:56:18.321Z"
     },
     {
-      "id": "07858ac0-5f91-43bc-92bc-53f0eb58ff82",
-      "shopName": "Vandana",
+      "id": "bdc9e057-efbf-41ad-9fde-e8d520edcff9",
+      "shopName": "Daily Needs",
+      "address": "Mumbai Suburban",
+      "category": "Butcher",
+      "openingDate": "2022-04-01T07:57:11.337Z",
+      "closingDate": "2022-04-30T07:57:14.803Z",
+      "createdAt": "2022-04-30T07:57:36.273Z"
+    },
+    {
+      "id": "babf6572-e82d-4244-92e4-904e8ade8c2a",
+      "shopName": "Shub k Mart",
       "address": "Nashikr",
       "category": "Grocery",
-      "openingDate": "2022-04-27T14:03:52.962Z",
-      "closingDate": "2022-04-30T14:03:56.249Z",
-      "createdAt": "2022-04-29T14:04:07.297Z"
+      "openingDate": "2022-04-14T07:58:20.593Z",
+      "closingDate": "2022-04-29T07:58:23.586Z",
+      "createdAt": "2022-04-30T07:58:26.418Z"
+    },
+    {
+      "id": "9a2840d8-4f01-46e2-99dd-62e9ce1294ba",
+      "shopName": "Pretty in Pink",
+      "address": "Nagpur",
+      "category": "Grocery",
+      "openingDate": "2022-04-20T07:59:36.794Z",
+      "closingDate": "2023-04-28T07:59:40.134Z",
+      "createdAt": "2022-04-30T07:59:50.948Z"
+    },
+    {
+      "id": "550f1c14-88b6-430a-9e56-f734595edfef",
+      "shopName": "Clothing Palette",
+      "address": "Ahmednagar",
+      "category": "Grocery",
+      "openingDate": "2022-04-07T08:00:12.363Z",
+      "closingDate": "2024-04-30T08:00:15.738Z",
+      "createdAt": "2022-04-30T08:00:27.846Z"
+    },
+    {
+      "id": "7b751147-c80b-4201-ac29-9b13359decd1",
+      "shopName": "Play dress up",
+      "address": "Solapur",
+      "category": "Grocery",
+      "openingDate": "2021-04-08T08:00:58.040Z",
+      "closingDate": "2023-04-29T08:01:04.149Z",
+      "createdAt": "2022-04-30T08:01:09.464Z"
+    },
+    {
+      "id": "8f39454f-3acc-4723-855d-b3f962a5a569",
+      "shopName": "Foodmoji",
+      "address": "Ahmednagar",
+      "category": "Grocery",
+      "openingDate": "2021-04-02T08:02:11.143Z",
+      "closingDate": "2024-04-27T08:02:19.408Z",
+      "createdAt": "2022-04-30T08:02:32.472Z"
+    },
+    {
+      "id": "eed30243-5317-4bff-8a62-b180680cbf74",
+      "shopName": "Tasty Treats",
+      "address": "Pune",
+      "category": "Grocery",
+      "openingDate": "2022-04-01T08:03:29.524Z",
+      "closingDate": "2024-04-27T08:03:32.469Z",
+      "createdAt": "2022-04-30T08:03:36.816Z"
     }
   ]
 }
