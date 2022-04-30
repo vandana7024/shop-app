@@ -13,12 +13,11 @@ function HomePage() {
   const dispatch = useDispatch();
   const shopData = useSelector((state) => state.shop.shops, shallowEqual);
   const [filterData, setFilterData] = React.useState([...shopData]);
-  const [searchText, setSearchText] = React.useState("");
 
   React.useEffect(() => {
     dispatch(retriveShops());
     setFilterData([...shopData]);
-  }, [dispatch, searchText]);
+  }, [dispatch]);
 
   const columns = [
     {
@@ -49,7 +48,7 @@ function HomePage() {
       key: "closingDate",
       render: (text) => <span>{moment(text).format("DD/MM/YYYY")}</span>,
     },
-    // if closingdate is less than today's date then show status as closed else show status as open
+
     {
       title: "Status",
       dataIndex: "closingDate",
@@ -92,17 +91,6 @@ function HomePage() {
       setFilterData(shopData);
     }
   };
-
-  // const handleSearch = (e) => {
-  //   if (searchText) {
-  //     const searchData = shopData.filter((item) =>
-  //       item.shopName.toLowerCase().includes(searchText.toLowerCase())
-  //     );
-  //     setFilterData(searchData);
-  //   } else {
-  //     setFilterData(shopData);
-  //   }
-  // };
   const hadleSearchDate = (e) => {
     const searchData = shopData.filter(
       (item) =>
@@ -112,8 +100,7 @@ function HomePage() {
     setFilterData(searchData);
   };
 
-  console.log("filter", filterData);
-
+  const dataSource = filterData.length !== 0 ? filterData : shopData;
   return (
     <div className="object-contain flex flex-col justify-center items-center ">
       <Navbar />
@@ -128,7 +115,7 @@ function HomePage() {
       <Table
         className="m-6"
         columns={columns}
-        dataSource={filterData}
+        dataSource={dataSource}
         scroll={{ x: 700, y: 800 }}
         rowKey="id"
       />

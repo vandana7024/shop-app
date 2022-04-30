@@ -7,7 +7,7 @@
       "category": "Butcher",
       "openingDate": "2022-04-01T11:32:18.897Z",
       "closingDate": "2022-04-30T11:32:21.508Z",
-      "updatedAt": "2022-04-29T17:09:03.292Z"
+      "updatedAt": "2022-04-30T06:36:10.700Z"
     },
     {
       "id": "b73940fa-6a63-4ed7-9357-901839997825",
@@ -15,8 +15,8 @@
       "address": "Mumbai Suburban",
       "category": "Baker",
       "openingDate": "2022-04-20T11:55:43.738Z",
-      "closingDate": "2022-04-29T11:55:46.586Z",
-      "createdAt": "2022-04-29T11:55:48.379Z"
+      "closingDate": "2022-04-30T06:21:06.958Z",
+      "updatedAt": "2022-04-30T06:21:08.663Z"
     },
     {
       "id": "f6670150-279f-4153-8a79-317831bae90e",
@@ -44,24 +44,6 @@
       "openingDate": "2022-04-27T14:03:52.962Z",
       "closingDate": "2022-04-30T14:03:56.249Z",
       "createdAt": "2022-04-29T14:04:07.297Z"
-    },
-    {
-      "id": "10702d06-70ea-402e-9daf-f695889ab59b",
-      "shopName": "GGGGH",
-      "address": "Pune",
-      "category": "Baker",
-      "openingDate": "2022-04-15T17:06:00.702Z",
-      "closingDate": "2022-04-30T17:06:06.043Z",
-      "updatedAt": "2022-04-29T17:06:38.031Z"
-    },
-    {
-      "id": "98a262e1-1e79-448a-ae59-39ed1f771ca3",
-      "shopName": "123",
-      "address": "Nashikr",
-      "category": "Butcher",
-      "openingDate": "2022-04-28T03:03:07.105Z",
-      "closingDate": "2022-04-30T03:03:12.871Z",
-      "createdAt": "2022-04-30T03:03:15.918Z"
     }
   ]
 }

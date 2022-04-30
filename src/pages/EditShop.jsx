@@ -1,5 +1,14 @@
 import React from "react";
-import { Button, Form, Input, Select, DatePicker, message, Modal } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  Select,
+  DatePicker,
+  message,
+  Modal,
+  InputNumber,
+} from "antd";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -93,6 +102,7 @@ const EditShop = ({ shop, modalVisible }) => {
               rules={[
                 {
                   pattern: /^[a-zA-Z ]+$/,
+
                   message: "Please insert your shop name",
                 },
                 {
@@ -101,7 +111,7 @@ const EditShop = ({ shop, modalVisible }) => {
                 },
               ]}
             >
-              <Input placeholder="Enter Shop Name" />
+              <InputNumber placeholder="Enter Shop Name" allowClear />
             </Form.Item>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -154,6 +164,8 @@ const EditShop = ({ shop, modalVisible }) => {
             <div className="w-full flex-1 md:m-2 ">
               <label htmlFor="">Opening Date</label>
               <DatePicker
+                required
+                type="date"
                 label="Opening Date"
                 defaultValue={openingDate}
                 format={"DD/MM/YYYY"}
@@ -164,6 +176,8 @@ const EditShop = ({ shop, modalVisible }) => {
             <div className="w-full flex-1 md:m-2 mt-5">
               <label>Closing Date</label>
               <DatePicker
+                required
+                type="date"
                 label="Closing Date"
                 defaultValue={closingDate}
                 format={"DD/MM/YYYY"}
