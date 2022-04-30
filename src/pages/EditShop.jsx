@@ -2,7 +2,6 @@ import React from "react";
 import {
   Button,
   Form,
-  Input,
   Select,
   DatePicker,
   message,
@@ -98,7 +97,6 @@ const EditShop = ({ shop, modalVisible }) => {
               className="flex-1 md:m-2"
               label="Shop Name"
               name="shopName"
-              // input box contain only alphabets and spaces only and max length is 40 characters only and required field is true and message is "Please insert your shop name"
               rules={[
                 {
                   pattern: /^[a-zA-Z ]+$/,
