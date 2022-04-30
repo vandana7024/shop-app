@@ -53,6 +53,15 @@
       "openingDate": "2022-04-15T17:06:00.702Z",
       "closingDate": "2022-04-30T17:06:06.043Z",
       "updatedAt": "2022-04-29T17:06:38.031Z"
+    },
+    {
+      "id": "98a262e1-1e79-448a-ae59-39ed1f771ca3",
+      "shopName": "123",
+      "address": "Nashikr",
+      "category": "Butcher",
+      "openingDate": "2022-04-28T03:03:07.105Z",
+      "closingDate": "2022-04-30T03:03:12.871Z",
+      "createdAt": "2022-04-30T03:03:15.918Z"
     }
   ]
 }

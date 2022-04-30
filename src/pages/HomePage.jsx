@@ -17,6 +17,7 @@ function HomePage() {
 
   React.useEffect(() => {
     dispatch(retriveShops());
+    setFilterData([...shopData]);
   }, [dispatch, searchText]);
 
   const columns = [
@@ -48,6 +49,19 @@ function HomePage() {
       key: "closingDate",
       render: (text) => <span>{moment(text).format("DD/MM/YYYY")}</span>,
     },
+    // if closingdate is less than today's date then show status as closed else show status as open
+    {
+      title: "Status",
+      dataIndex: "closingDate",
+      key: "status",
+      render: (text) => {
+        if (moment(text).isBefore(moment())) {
+          return <span className="text-red-600">Closed</span>;
+        } else {
+          return <span className="text-green-600">Open</span>;
+        }
+      },
+    },
 
     {
       title: "Action",
@@ -55,7 +69,10 @@ function HomePage() {
       render: (text, record) => (
         <Space size="middle">
           <EditShop shop={record} />
-          <Button onClick={() => dispatch(deleteShop(record.id))}>
+          <Button
+            onClick={() => dispatch(deleteShop(record.id))}
+            className="hover:bg-gray-300 flex justify-center items-center rounded-full text-black"
+          >
             <DeleteOutlined style={{ fontSize: "20px", color: "red" }} />
           </Button>
         </Space>
@@ -93,7 +110,6 @@ function HomePage() {
         moment(item.closingDate).isSame(e, "day")
     );
     setFilterData(searchData);
-    console.log("jd", searchData);
   };
 
   console.log("filter", filterData);

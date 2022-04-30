@@ -62,8 +62,13 @@ const EditShop = ({ shop, modalVisible }) => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        <EditOutlined style={{ fontSize: "20px", color: "blue" }} />
+      <Button
+        type="primary"
+        onClick={showModal}
+        style={{ fontSize: "20px", color: "blue", border: "0px solid white" }}
+        className="hover:bg-gray-300 flex justify-center items-center rounded-full text-black"
+      >
+        <EditOutlined />
       </Button>
       <Modal
         title="Update Shop"
@@ -81,10 +86,20 @@ const EditShop = ({ shop, modalVisible }) => {
         >
           <div className="flex flex-col md:flex-row justify-evenly ">
             <Form.Item
-              rules={[{ required: true, message: "Please insert your name" }]}
               className="flex-1 md:m-2"
-              label="Name"
+              label="Shop Name"
               name="shopName"
+              // input box contain only alphabets and spaces only and max length is 40 characters only and required field is true and message is "Please insert your shop name"
+              rules={[
+                {
+                  pattern: /^[a-zA-Z ]+$/,
+                  message: "Please insert your shop name",
+                },
+                {
+                  required: true,
+                  message: "Please insert your shop name",
+                },
+              ]}
             >
               <Input placeholder="Enter Shop Name" />
             </Form.Item>
@@ -147,7 +162,7 @@ const EditShop = ({ shop, modalVisible }) => {
               />
             </div>
             <div className="w-full flex-1 md:m-2 mt-5">
-              <label htmlFor="">Closing Date</label>
+              <label>Closing Date</label>
               <DatePicker
                 label="Closing Date"
                 defaultValue={closingDate}

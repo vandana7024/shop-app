@@ -43,8 +43,8 @@ function CreateShop() {
   return (
     <div>
       <center>
-        <div className=" w-full h-screen  bg-gray-200 flex justify-center items-center rounded-xl shadow-2xl shadow-blue-400">
-          <div className="w-full md:max-w-2xl bg-white p-5 ">
+        <div className=" w-full h-screen  bg-gray-100 flex justify-center items-center rounded-xl shadow-2xl shadow-blue-400">
+          <div className="w-full md:max-w-2xl  bg-white p-5 mb-6 ">
             <div className="flex justify-start items-start ">
               <Title
                 level={3}
@@ -63,13 +63,16 @@ function CreateShop() {
                 <div className="w-full">
                   <Form.Item
                     rules={[
-                      { required: true, message: "Please insert your name" },
+                      {
+                        required: true,
+                        message: "Please insert your shop name",
+                      },
                     ]}
                     className="flex-1 md:m-2"
-                    label="Name"
+                    label="Shop Name"
                     name="shopName"
                   >
-                    <Input placeholder="Enter Shop Name" />
+                    <Input placeholder="Enter Shop Name" maxLength={40} />
                   </Form.Item>
                 </div>
 
@@ -127,7 +130,12 @@ function CreateShop() {
                   <Form.Item
                     name="openingDate"
                     label="Opening Time"
-                    rules={[{ required: true }]}
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please Select Opening Time!",
+                      },
+                    ]}
                     className="w-full flex-1 md:m-2"
                   >
                     <DatePicker style={{ width: "100%" }} />
@@ -135,7 +143,12 @@ function CreateShop() {
                   <Form.Item
                     name="closingDate"
                     label="Closing Time"
-                    rules={[{ required: true }]}
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please Select Closing Time!",
+                      },
+                    ]}
                     className="w-full flex-1 md:m-2"
                   >
                     <DatePicker style={{ width: "100%" }} />
