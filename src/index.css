@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @import '~antd/dist/antd.css';
+
+
+.ant-table-thead {
+    font-weight: 700 !important;
+    font-size: large !important;
+     
+}

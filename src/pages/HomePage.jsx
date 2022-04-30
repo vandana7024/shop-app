@@ -52,7 +52,7 @@ function HomePage() {
         className="m-6"
         columns={columns}
         dataSource={dataSource}
-        scroll={{ x: 700, y: 800 }}
+        scroll={{ x: 800, y: 300 }}
         rowKey="id"
       />
     </div>
